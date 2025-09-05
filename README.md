@@ -12,7 +12,8 @@ A Python library for securely storing API keys for various AI providers locally 
 ## Installation
 
 ```bash
-pip install lavai
+git clone https://github.com/Heron4gf/lavai
+pip install -e .
 ```
 
 ## Usage
@@ -58,6 +59,7 @@ chat_completion = client._client.chat.completions.create(
 ## Supported Providers
 
 - OpenAI
+- Any OpenAI client compatible provider (e.g., Anthropic, Cohere, OpenRouter, etc.)
 
 ## Credential Storage
 
@@ -77,6 +79,8 @@ Credentials are stored in `~/.lavai/credentials.json` with the following structu
 ```
 
 The `~/.lavai/` directory and `credentials.json` file are created automatically on first use.
+
+**!!! Security Notice !!!** secrets are stored in a plain json file, it is recommended to double check that the programs you install using lavai as dependency do not steal those keys
 
 ## API Reference
 
@@ -122,7 +126,3 @@ Remove credentials for a client.
 ### `lavai override <client_name> <api_key>`
 
 Override credentials for a client (same as add).
-
-## License
-
-MIT
