@@ -1,5 +1,10 @@
 # Lavai
 
+[![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/Heron4gf/lavai)
+[![MIT License](https://img.shields.io/badge/MIT-green?style=for-the-badge)](LICENSE)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)](https://github.com/Heron4gf/lavai/actions)
+[![PyPI Version](https://img.shields.io/pypi/v/lavai?style=for-the-badge)](https://pypi.org/project/lavai/)
+
 A Python library for securely storing API keys for various AI providers locally and providing a unified client interface to interact with them.
 
 ## Features
