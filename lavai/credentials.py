@@ -83,3 +83,14 @@ def remove(client_name: str) -> bool:
         save_credentials(credentials)
         return True
     return False
+
+
+def list_clients() -> list:
+    """
+    List all client names.
+    
+    Returns:
+        List of client names
+    """
+    credentials = load_credentials()
+    return list(credentials.keys())

@@ -25,8 +25,8 @@ Example usage:
     print(response.output_text)
 """
 
-from .credentials import store, remove
+from .credentials import store, remove, list_clients
 from .client import client
 
-__all__ = ['store', 'client', 'remove']
+__all__ = ['store', 'client', 'remove', 'list_clients']
 __version__ = '0.1.0'

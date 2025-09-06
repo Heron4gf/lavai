@@ -1,6 +1,5 @@
 # Lavai
 
-[![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/Heron4gf/lavai)
 [![MIT License](https://img.shields.io/badge/MIT-green?style=for-the-badge)](LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)](https://github.com/Heron4gf/lavai/actions)
 [![PyPI Version](https://img.shields.io/pypi/v/lavai?style=for-the-badge)](https://pypi.org/project/lavai/)
@@ -32,6 +31,7 @@ Manage your AI provider credentials directly from the command line:
 | `lavai add <client_name> <api_key>` | Add or update credentials for a provider | `lavai add openai "your-api-key"` |
 | `lavai remove <client_name>` | Remove credentials for a provider | `lavai remove openai` |
 | `lavai override <client_name> <api_key>` | Override credentials for a provider (same as add) | `lavai override openai "new-api-key"` |
+| `lavai list` | List all configured providers | `lavai list` |
 
 ### Python API
 
@@ -56,6 +56,10 @@ chat_completion = client._client.chat.completions.create(
     model="gpt-4",
     messages=[{"role": "user", "content": "Hello!"}]
 )
+
+# List all configured clients
+clients = lavai.list_clients()
+print("Configured clients:", clients)
 ```
 
 ## Supported Providers
@@ -91,3 +95,4 @@ The `~/.lavai/` directory and `credentials.json` file are created automatically 
 | `lavai.store(client_name: str, api_key: str, base_url: str = None)` | Store or update credentials for a client | `client_name`, `api_key`, `base_url` (optional) |
 | `lavai.client(provider_name: str)` | Get a client object for the specified provider | `provider_name` |
 | `lavai.remove(client_name: str)` | Remove credentials for a client | `client_name` |
+| `lavai.list_clients()` | List all client names | None |

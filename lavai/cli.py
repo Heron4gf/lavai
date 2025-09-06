@@ -1,5 +1,5 @@
 import click
-from .credentials import store, remove as remove_credentials
+from .credentials import store, remove as remove_credentials, list_clients
 
 
 @click.group()
@@ -34,6 +34,18 @@ def override(client_name, api_key):
     """Override credentials for a client (same as add)."""
     store(client_name, api_key)
     click.echo(f"Credentials for '{client_name}' have been updated.")
+
+
+@main.command()
+def list():
+    """List all configured clients."""
+    clients = list_clients()
+    if clients:
+        click.echo("Configured clients:")
+        for client in clients:
+            click.echo(f"  - {client}")
+    else:
+        click.echo("No clients configured.")
 
 
 if __name__ == '__main__':
